@@ -1,0 +1,12 @@
+.env
+.env.local
+out/
+__pycache__/
+*.pyc
+android/gen/
+android/*.apk
+android/*.dex
+android/*.idsig
+android/res.zip
+android/build/
+.DS_Store

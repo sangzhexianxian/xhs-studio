@@ -1,0 +1,204 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta name="robots" content="noindex">
+<title>一本书读三遍，我才看懂自己</title><style>
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:#F6F4F0;font-family:-apple-system,"PingFang SC","Noto Sans SC",sans-serif;color:#16181C}
+.wrap{max-width:560px;margin:0 auto;padding:18px 16px 70px}
+.hd{display:flex;align-items:center;gap:8px;margin-bottom:14px}
+.dot{width:8px;height:8px;border-radius:2px;background:#E8543A}
+.hd b{font-size:15px;letter-spacing:.5px}
+.hd span{font-size:12px;color:#9a9ca0;margin-left:auto}
+.sec{background:#fff;border-radius:16px;padding:16px;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+.lb{font-size:11px;color:#9a9ca0;letter-spacing:1px;margin-bottom:10px}
+.opt{border:1px solid #E8E6E1;border-radius:12px;padding:12px 14px;margin-bottom:9px;font-size:15px;
+line-height:1.5;cursor:pointer;position:relative;padding-right:44px}
+.opt:last-child{margin-bottom:0}
+.opt:active{background:#F1F7F4;border-color:#0E3B33}
+.opt em{position:absolute;right:12px;top:11px;font-style:normal;font-size:11px;color:#ABADB2}
+.opt.on{border-color:#0E3B33;background:#F1F7F4}
+.cp{display:inline-block;margin-top:12px;background:#0E3B33;color:#fff;border:0;border-radius:10px;
+padding:10px 20px;font-size:14px;font-weight:600}
+.cp:active{opacity:.8}
+.body{font-size:14.5px;line-height:1.85;white-space:pre-wrap;color:#2A2C30}
+.tags{font-size:13px;line-height:1.9;color:#0E3B33}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.grid img{width:100%;border-radius:10px;display:block;border:1px solid #EDEBE6}
+.tip{font-size:12px;color:#9a9ca0;line-height:1.7;margin-top:8px}
+.dl{display:flex;gap:10px}
+.dl a{flex:1;text-align:center;background:#fff;border:1px solid #E8E6E1;color:#16181C;
+border-radius:12px;padding:13px;font-size:13.5px;text-decoration:none;font-weight:600}
+.dl a.p{background:#E8543A;color:#fff;border-color:#E8543A}
+.savebar{position:fixed;left:0;right:0;bottom:0;background:#0E3B33;color:#fff;padding:14px 16px 18px;
+display:none;align-items:center;justify-content:center;gap:10px;font-size:15px;font-weight:600;
+box-shadow:0 -4px 16px rgba(0,0,0,.14);z-index:50;cursor:pointer}
+.savebar.on{display:flex}
+body.hasbar{padding-bottom:86px}
+.toast{position:fixed;left:50%;bottom:76px;transform:translateX(-50%);background:#16181C;color:#fff;
+padding:10px 20px;border-radius:20px;font-size:13px;opacity:0;transition:.25s;pointer-events:none;z-index:60}
+.toast.on{opacity:1}
+</style></head><body>
+<div class="wrap">
+  <div class="hd"><div class="dot"></div><b>我的图文账号</b>
+  <span>9 张 · 2026-11-15 16:41</span></div>
+
+  <div class="sec" style="border:1px solid #F1CDBD;background:#FFF8F4">
+    <div class="lb" style="color:#C25A3C">第一步 · 存图</div>
+    <div class="grid"><img src="01.jpg" loading="lazy" alt="1"><img src="02.jpg" loading="lazy" alt="2"><img src="03.jpg" loading="lazy" alt="3"><img src="04.jpg" loading="lazy" alt="4"><img src="05.jpg" loading="lazy" alt="5"><img src="06.jpg" loading="lazy" alt="6"><img src="07.jpg" loading="lazy" alt="7"><img src="08.jpg" loading="lazy" alt="8"><img src="09.jpg" loading="lazy" alt="9"></div>
+    <div class="tip" id="save-tip"><b>一键存相册</b>：装了配套 APK，点底部按钮整批进相册，不用长按另存九次。<br>纯网页做不到静默写相册，所以提供打包下载兜底。</div>
+    <div class="dl" style="margin-top:12px">
+      <a href="demo.zip" download class="p">打包下载 zip</a>
+      <a href="01.jpg" download>只下封面</a>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="lb">第二步 · 标题（点一条复制）</div>
+    <div class="opt" onclick="cp(this.dataset.t,this)" data-t="一本书读三遍，我才看懂自己">一本书读三遍，我才看懂自己<em>1</em></div><div class="opt" onclick="cp(this.dataset.t,this)" data-t="剪到第七版，我发现问题不在片子">剪到第七版，我发现问题不在片子<em>2</em></div><div class="opt" onclick="cp(this.dataset.t,this)" data-t="删掉最爱的金句后，数据反而好了">删掉最爱的金句后，数据反而好了<em>3</em></div>
+  </div>
+
+  <div class="sec">
+    <div class="lb">第三步 · 正文</div>
+    <div class="body" id="cap-txt">一本书我读了三遍，第三遍才真看懂。
+
+第一遍只记住四个字：课题分离。觉得挺聪明，然后就没了。
+第二遍我把它抄在便签上，贴在显示器边上。说实话，一次都没用上。
+
+第三遍是上周。我在剪一条片子，剪到第七版。
+剪着剪着我发现，我一直在想的是：这条发出去，别人会不会觉得我在装。
+
+那一刻我才反应过来。
+我根本没在做内容，我在做一件更累的事——提前替所有人评价我自己。
+
+岸见一郎说，一切烦恼都来自人际关系。
+我以前当鸡汤听，现在觉得它精确得像一句诊断。
+不是别人在评价我，是我在借别人的嘴评价我自己。
+
+这周我做了一个很笨的练习：
+发片之前不许问任何人好不好看，只问自己一句——这段我自己信不信。
+
+结果我删掉了自己最爱的那段金句。
+因为它只是好听，不解决任何问题。
+删的时候是有点舍不得的。
+
+但发出去之后，那条片子的完播率，是我最近几条里最高的。</div>
+    <button class="cp" onclick="cp(document.getElementById('cap-txt').textContent,this)">复制正文</button>
+  </div>
+
+  <div class="sec">
+    <div class="lb">话题标签</div>
+    <div class="tags" id="tag-txt">#被讨厌的勇气 #重读一本书 #课题分离 #自我观察 #内容创作 #剪片子 #内耗</div>
+    <button class="cp" onclick="cp(document.getElementById('tag-txt').textContent,this)">复制标签</button>
+  </div>
+
+  <div class="sec">
+    <div class="lb">发布前自查</div>
+    <div class="tip" style="margin-top:0">
+      · 图片顺序不能乱：第 1 张是封面，决定了点击率<br>
+      · 标签用满 7 个，前 3 个最重要<br>
+      · 第一篇别带任何外链，也别在正文写"关注我"<br>
+      · 如果内容由 AI 参与生成，按平台规则如实标注
+    </div>
+  </div>
+</div>
+
+<div class="savebar" id="sb">📥 全部存入相册</div>
+<div class="toast" id="tt"></div>
+<script>
+function cp(txt,el){
+  var ta=document.createElement('textarea');ta.value=txt;ta.style.position='fixed';
+  ta.style.top='-9999px';document.body.appendChild(ta);ta.select();
+  try{document.execCommand('copy')}catch(e){}
+  document.body.removeChild(ta);toast('已复制');
+  if(el){document.querySelectorAll('.opt').forEach(function(x){x.classList.remove('on')});
+  el.classList.add('on')}
+}
+function toast(m){var t=document.getElementById('tt');if(!t)return;t.textContent=m;t.classList.add('on');
+clearTimeout(window._tt);window._tt=setTimeout(function(){t.classList.remove('on')},1600)}
+
+var ALBUM='我的图文账号';
+var CAPTION=document.getElementById('cap-txt')?document.getElementById('cap-txt').textContent:'';
+var NATIVE=!!(window.AndroidBridge&&window.AndroidBridge.saveImages);
+var CANSHARE=!!(navigator.canShare&&navigator.share);
+
+function imgUrls(){
+  var a=[];document.querySelectorAll('.grid img').forEach(function(im){
+    a.push(new URL(im.getAttribute('src'),location.href).href)});
+  return a;
+}
+
+/* 路径1：原生批量写相册 */
+function nativeSave(){
+  var urls=imgUrls(),bar=document.getElementById('sb');
+  window.__saveTotal=urls.length;
+  bar.innerHTML='<span>⏳</span> 正在存入相册 0/'+urls.length;
+  AndroidBridge.saveImages(JSON.stringify(urls),ALBUM);
+}
+window.__saveProgress=function(n,t){
+  var bar=document.getElementById('sb');
+  if(bar)bar.innerHTML='<span>⏳</span> 正在存入相册 '+n+'/'+t;
+};
+window.__saveDone=function(ok,fail){
+  var bar=document.getElementById('sb');
+  if(bar)bar.innerHTML='<span>✅</span> 已存入相册 '+ok+' 张'+(fail?'，失败 '+fail:''); 
+  toast('去相册看看，文件夹「'+ALBUM+'」');
+  setTimeout(function(){if(bar)bar.innerHTML='<span>📥</span> 全部存入相册（可重复点击）'},2800);
+};
+
+/* 路径2：系统分享（带文件），可保存到相册或直接发到 App */
+async function shareAll(){
+  var bar=document.getElementById('sb');
+  try{
+    bar.innerHTML='<span>⏳</span> 正在准备图片…';
+    var files=[];
+    var urls=imgUrls();
+    for(var i=0;i<urls.length;i++){
+      var r=await fetch(urls[i],{cache:'force-cache'});
+      var b=await r.blob();
+      files.push(new File([b],urls[i].split('/').pop(),{type:b.type||'image/jpeg'}));
+    }
+    if(navigator.canShare&&navigator.canShare({files:files})){
+      await navigator.share({files:files,text:CAPTION});
+      bar.innerHTML='<span>📤</span> 再次分享 / 保存';
+    }else{
+      bar.innerHTML='<span>⬇️</span> 逐张下载';
+      downloadAll();
+    }
+  }catch(e){
+    bar.innerHTML='<span>⬇️</span> 已取消，可改用逐张下载';
+  }
+}
+
+/* 路径3：逐张下载（最差兜底，任何浏览器都有按钮，不会让人以为功能没做） */
+function downloadAll(){
+  var urls=imgUrls();
+  urls.forEach(function(u,i){setTimeout(function(){
+    var a=document.createElement('a');a.href=u;a.download=u.split('/').pop();
+    a.target='_blank';a.rel='noopener';document.body.appendChild(a);a.click();
+    document.body.removeChild(a);
+  },i*300)});
+  toast('已开始逐张下载（共 '+urls.length+' 张）');
+}
+
+function initSave(){
+  if(window.__saveInit)return;
+  window.__saveInit=1;
+  document.body.classList.add('hasbar');
+  var bar=document.getElementById('sb');
+  bar.classList.add('on');
+  if(NATIVE){
+    bar.innerHTML='<span>📥</span> 全部存入相册';
+    bar.onclick=nativeSave;
+  }else if(CANSHARE){
+    bar.innerHTML='<span>📤</span> 一键保存 / 分享这 9 张';
+    bar.onclick=shareAll;
+  }else{
+    bar.innerHTML='<span>⬇️</span> 逐张下载这 9 张';
+    bar.onclick=downloadAll;
+  }
+}
+document.addEventListener('DOMContentLoaded',initSave);
+window.addEventListener('load',initSave);
+setTimeout(initSave,300);
+</script>
+</body></html>

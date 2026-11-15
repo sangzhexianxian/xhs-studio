@@ -1,0 +1,2 @@
+# 只有一个第三方依赖：Pillow（画图）。LLM 走标准库 urllib，不装 SDK。
+Pillow>=10.0
